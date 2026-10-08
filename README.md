@@ -13,5 +13,5 @@ This table and bar chart show the percent of tweets in the 2009-2018 archive for
 |         jobs | 3.07              |
 |         MAGA | 1.80              |
 
-
+![Bar chart of phrase counts](phrase_counts.png)
 
