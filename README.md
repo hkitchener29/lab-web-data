@@ -14,4 +14,3 @@ This table and bar chart show the percent of tweets in the 2009-2018 archive for
 |         MAGA | 1.80              |
 
 
-/Users/hannahkitchener/csci 40/lab-web-data/phrase_counts.png
