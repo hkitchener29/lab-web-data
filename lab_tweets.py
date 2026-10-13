@@ -41,7 +41,7 @@ def make_bar_chart(plist, percentage, filename='tweets.png'):
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.savefig(filename)
-    plt.show()
+
 
 if __name__ == '__main__':
     tweets = load_tweets()
