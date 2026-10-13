@@ -20,7 +20,6 @@ def count_phrase(tweets, phrase):
         else:
             tweet_text = tweet['text']
         tweet_text = tweet_text.lower()
-
         if phrase in tweet_text:
             count += 1
     return count
@@ -31,27 +30,25 @@ def count_list (tweets, plist):
         counts[phrase] = count_phrase(tweets, phrase)
     return counts
 
-tweets = load_tweets()
-print ('Total Tweets:', len(tweets))
+if __name__ == '__main__':
+    tweets = load_tweets()
+    print('Total Tweets:', len(tweets))
 
 plist = ['Obama', 'Trump', 'Mexico', 'Russia', 'Fake News', 'wall', 'jobs', 'MAGA']
 counts = count_list(tweets, plist)
 print(counts)
 
-sum = 0
-for phrase in plist:
-    sum += counts[phrase]
 
 percentage = {}
 for phrase in plist:
-    percentage[phrase] = (counts[phrase] / sum)*100
+    percentage[phrase] = (counts[phrase] / len(tweets))*100
 
-print(f'| {"Phrase":<12} | {"Percent of Tweets":>} |')
-print(f'|{"-"*14}|{"-"*19}|')
+print(f'| {"Phrase":<18} | {"Percent of Tweets":>17} |')
+print(f'|{"-"*18}|{"-"*17}|')
 for phrase, n in counts.items():
-    print(f'| {phrase:>12} | {percentage[phrase]:<17.2f} |')
+    print(f'| {phrase:>18} | {percentage[phrase]:<05.2f} |')
 
-def make_bar_chart(counts, filename='phrase_counts.png'):
+def make_bar_chart(plist, percentage, filename='tweets.png'):
     plt.figure(figsize=(10, 5))
     plt.bar(list(plist), [percentage[phrase] for phrase in plist])
     plt.xlabel('Phrase')
@@ -62,6 +59,6 @@ def make_bar_chart(counts, filename='phrase_counts.png'):
     plt.savefig(filename)
     plt.show()
 
-make_bar_chart(counts)
+make_bar_chart(plist, percentage)
 
 
