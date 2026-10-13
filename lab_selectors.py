@@ -135,7 +135,7 @@ def extract_listings(html):
         price = item.select('.price')[0]
         listings.append({
             'name': title.text.strip(),
-            'price_cents': round(float(price.text.strip().replace('$', '').replace(',', '')) * 100),     # the price as an int of cents
+            'price_cents': int(round(float(price.text.strip().replace('$', '').replace(',', '')) * 100)),     # the price as an int of cents
             'url': title['href'],
         })
     return listings
