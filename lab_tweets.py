@@ -1,6 +1,8 @@
 # Load master_2009.json through master_2018.json, analyze the tweets, and make a bar chart.
 # Follow the linked course assignment in README.md.
 import json
+import matplotlib
+matplotlib.use('Agg')  # Use the 'Agg' backend for headless environments
 import matplotlib.pyplot as plt
 
 def load_tweets():
