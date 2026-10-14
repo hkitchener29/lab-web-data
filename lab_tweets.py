@@ -57,7 +57,7 @@ if __name__ == '__main__':
     print(f'| {"Phrase":<18} | {"Percent of Tweets":>17} |')
     print(f'|{"-"*18} | {"-"*17}|')
     for phrase, n in counts.items():
-        print(f'| {phrase:>18} | {percentage[phrase]:<05.2f} |')
+        print(f'| {phrase:>18} | {percentage[phrase]:05.2f} |')
 
     make_bar_chart(plist, percentage)
 
